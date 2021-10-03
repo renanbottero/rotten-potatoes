@@ -43,10 +43,11 @@ jobs:
           push: true
           tags: |
             renanbottero/rotten-potatoes:latest
-            renanbottero/rotten-potatoes:${{ github.run_number }}
+            renanbottero/rotten-potatoes:v${{ github.run_number }}
             
 
-  CD:            
+  CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     
     steps:
